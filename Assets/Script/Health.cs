@@ -1,14 +1,17 @@
-﻿using UnityEngine;
-using UnityEngine.Networking;
+﻿    using UnityEngine;
+    using UnityEngine.Networking;
 
 
 public class Health : NetworkBehaviour
 {
     private const int maxHealth = 100;
+
     [SyncVar(hook = "OnChangeHealth")]
     public int currentHealth = maxHealth;
+
     [SerializeField]
     private RectTransform healthBar;
+
     private NetworkStartPosition[] spawnPoints;
 
     /// <summary>
